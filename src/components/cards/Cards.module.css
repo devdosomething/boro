@@ -1,0 +1,34 @@
+.card {
+  > img {
+    border-radius: 10px;
+  }
+}
+
+.closed {
+  animation: closeCardAnimation 0.3s ease forwards;
+  pointer-events: none;
+}
+
+.xIcon {
+  position: relative;
+  top: 30px;
+  left: 67%;
+  width: 35px;
+  height: 35px;
+  background: grey;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+@keyframes closeCardAnimation {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}

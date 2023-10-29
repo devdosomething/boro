@@ -1,0 +1,71 @@
+.bodyStyles {
+  display: grid;
+  flex: 1;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  background: rgb(218, 216, 216);
+  max-height: calc(100vh - 80px - 60px - 50px - 29px - 50px);
+  overflow-y: scroll;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.treeStyles {
+  display: grid;
+  flex: 1;
+  gap: 40px;
+  background: rgb(218, 216, 216);
+  max-height: calc(100vh - 80px - 60px - 50px - 29px - 50px);
+  overflow-y: scroll;
+}
+
+.noDataStyles {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.loader {
+  flex: 1;
+  max-height: calc(100vh - 80px - 80px - 48px);
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.tree {
+  max-height: 135px;
+  overflow-y: scroll;
+  width: 100%;
+  margin-left: 20px;
+}
+
+.btns {
+  margin: 0 auto;
+  padding: 3px;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.radio {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+@media screen and (max-width: 1200px) {
+  .bodyStyles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bodyStyles {
+    grid-template-columns: 1fr;
+  }
+}
