@@ -1,3 +1,4 @@
+import { config } from "../config";
 import { ICard } from "../types/Card";
 import { formatDate } from "./Utils";
 import styles from "/src/components/body/Body.module.css";
@@ -71,12 +72,14 @@ export const buildTree = (
                                     }}
                                   >
                                     <img
-                                      src={card.image}
+                                      src={config.PUBLIC_URL + card.image}
                                       alt={card.image}
                                       width="50px"
                                     />
                                   </div>
-                                  <span>Размер файла: {card.filesize}</span>
+                                  <span>
+                                    Размер файла: {card.filesize} байт
+                                  </span>
                                   <span>
                                     Дата: {formatDate(card.timestamp as string)}
                                   </span>
@@ -102,8 +105,12 @@ export const buildTree = (
                           display: "grid",
                         }}
                       >
-                        <img src={card.image} alt={card.image} width="50px" />
-                        <span>Размер файла: {card.filesize}</span>
+                        <img
+                          src={config.PUBLIC_URL + card.image}
+                          alt={card.image}
+                          width="50px"
+                        />
+                        <span>Размер файла: {card.filesize} байт</span>
                         <span>
                           Дата: {formatDate(card.timestamp as string)}
                         </span>

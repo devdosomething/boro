@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import styles from "./Cards.module.css";
 import { formatDate } from "../../utils/Utils";
 import { ICard, ICards } from "../../types/Card";
+import { config } from "../../config";
 
 interface ICardsProps {
   currentCards: ICards;
@@ -36,11 +37,19 @@ const Cards: FC<ICardsProps> = (props) => {
             X
           </button>
           <div className={styles.card}>
-            <img src={card.image} alt={card.category} width="50%" />
+            <img
+              src={config.PUBLIC_URL + card.image}
+              alt={card.category}
+              width="50%"
+            />
             <div>
+              <span>Имя {card.image}</span>
+              <br />
               <span>Дата: {formatDate(card.timestamp as string)}</span>
               <br />
               <span>Категория: {card.category}</span>
+              <br />
+              <span>Размер: {card.filesize} байт</span>
             </div>
           </div>
         </div>

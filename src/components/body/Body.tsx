@@ -93,10 +93,14 @@ const Body: FC = () => {
           padding: "5px",
         }}
       >
-        <FilterButtons
-          selectedFilter={selectedFilter}
-          handleFilterCards={handleFilterCards}
-        />
+        {selectedView !== "tree" ? (
+          <FilterButtons
+            selectedFilter={selectedFilter}
+            handleFilterCards={handleFilterCards}
+          />
+        ) : (
+          <div></div>
+        )}
         <ViewButtons
           viewOptions={viewOptions}
           selectedView={selectedView}
@@ -141,15 +145,17 @@ const Body: FC = () => {
             onClose={() => setIsModalOpen(false)}
             image={modalImage}
           />
-          <div className={styles.btns}>
-            <button onClick={() => paginate(1)}>1</button>
-            <button onClick={() => paginate(pageNumber - 1)}>Previous</button>
-            <span>
-              {pageNumber}/{totalPages}
-            </span>
-            <button onClick={() => paginate(pageNumber + 1)}>Next</button>
-            <button onClick={() => paginate(totalPages)}>{totalPages}</button>
-          </div>
+          {selectedView !== "tree" && (
+            <div className={styles.btns}>
+              <button onClick={() => paginate(1)}>1</button>
+              <button onClick={() => paginate(pageNumber - 1)}>Previous</button>
+              <span>
+                {pageNumber}/{totalPages}
+              </span>
+              <button onClick={() => paginate(pageNumber + 1)}>Next</button>
+              <button onClick={() => paginate(totalPages)}>{totalPages}</button>
+            </div>
+          )}
         </React.Fragment>
       )}
     </React.Fragment>

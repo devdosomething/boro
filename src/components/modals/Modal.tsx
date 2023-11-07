@@ -1,6 +1,7 @@
 import { FC } from "react";
 import ReactDOM from "react-dom";
 import styles from "./Modal.module.css";
+import { config } from "../../config";
 
 const Modal: FC<{
   isOpen: boolean;
@@ -15,7 +16,11 @@ const Modal: FC<{
         <button onClick={onClose} className={styles.closeButton}>
           Close
         </button>
-        <img src={image as string} alt="Modal" width="500px" />
+        <img
+          src={(config.PUBLIC_URL + image) as string}
+          alt="Modal"
+          width="500px"
+        />
       </div>
     </div>,
     document.getElementById("portal") as HTMLElement

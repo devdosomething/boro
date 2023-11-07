@@ -16,7 +16,7 @@
   flex: 1;
   gap: 40px;
   background: rgb(218, 216, 216);
-  max-height: calc(100vh - 80px - 60px - 50px - 29px - 50px);
+  max-height: calc(100vh - 80px - 60px - 50px - 29px);
   overflow-y: scroll;
 }
 
@@ -38,8 +38,6 @@
 }
 
 .tree {
-  max-height: 135px;
-  overflow-y: scroll;
   width: 100%;
   margin-left: 20px;
 }
